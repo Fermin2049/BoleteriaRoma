@@ -91,9 +91,32 @@ public class ClienteData {
 
     }    
     
+    public void modificarCliente(Cliente c) {
+        String sql = "UPDATE cliente SET nombreCli = ?,apellidoCli = ?,dniCli = ?,estadoCli = ? WHERE idCliente = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, c.getNombreCli());
+            ps.setString(2, c.getApellidoCli());
+            ps.setInt(3, c.getDniCli());
+            ps.setBoolean(4, c.isEstadoCli());
+            ps.setInt(5, c.getIdCliente());
+
+            if (ps.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Cliente Modificado Exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "No Existe el Cliente");
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al Modificar Cliente" + ex);
+        }
+
+    }
+    
     public Cliente buscarCliente(int idCliente){
         Cliente c = null;
-        String sql = "SELECT * FROM cliente WHERE idCliente = ? AND estadoCli = true";
+        String sql = "SELECT * FROM cliente WHERE idCliente = ? AND ";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);

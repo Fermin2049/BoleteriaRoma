@@ -85,6 +85,26 @@ public class PeliculaData {
         }
     }
     
+    public void modificarPelicula(Pelicula p){
+        String sql = "UPDATE pelicula SET nombrePel = ?,estadoPel = ? WHERE IdPelicula= ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, p.getNombrePel());
+            ps.setBoolean(2, p.isEstadoPel());
+            ps.setInt(3, p.getIdPelicula());
+
+            if (ps.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Pelicula Modificada Exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "No Existe la Pelicula");
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al Modificar Pelicula" + ex);
+        }
+    }
+    
     public Pelicula buscarPelicula(int idPelicula){
         
         Pelicula p = null;

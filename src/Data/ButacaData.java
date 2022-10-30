@@ -74,6 +74,27 @@ public class ButacaData {
         }
     }
     
+    public void modificarButaca(Butaca b){
+        String sql = "UPDATE butaca SET idSala = ?,fila = ?,columna = ? WHERE idButaca = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, b.getSala().getIdSala());
+            ps.setString(2, b.getFila());
+            ps.setInt(3, b.getColumna());
+            ps.setInt(4, b.getIdButaca());
+
+            if (ps.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Butaca Modificada Exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "No Existe la Butaca");
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al Modificar Butaca" + ex);
+        }
+    }
+    
     public void ocuparButaca(){
         
     }
@@ -131,6 +152,19 @@ public class ButacaData {
         
         return listarButaca;
     }
+    
+    
+    
+//    SELECT  t.idButaca from butaca b, proyeccion p, sala s, tiket t 
+//WHERE t.idProyeccion=p.idProyeccion and t.idButaca= b.idButaca and p.idSala = s.idSala and s.idSala=b.idSala
+//and p.inicioPro BETWEEN '2022-10-27 16:00:00' AND '2022-10-27 18:00:00'
+    
+//    SELECT pelicula.nombrePel, proyeccion.incioProy, proyeccion.finProy,proyeccion.idSala,proyeccion.idProyeccion 
+//FROM proyeccion, pelicula 
+//WHERE proyeccion.idPelicula = pelicula.idPelicula
+//AND incioProy >= now()
+//AND proyeccion.estadoProy = 1
+//ORDER BY incioProy
     
   }
     
