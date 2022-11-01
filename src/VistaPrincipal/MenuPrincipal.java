@@ -130,6 +130,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel10.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel10.setText("Proyeccion");
         jLabel10.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_movie_projector_25px.png"))); // NOI18N
 
@@ -239,6 +244,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel14.setText("Sala");
         jLabel14.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_room_25px.png"))); // NOI18N
 
@@ -437,6 +447,26 @@ public class MenuPrincipal extends javax.swing.JFrame {
         contenedor.revalidate();
         contenedor.repaint();
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+        PanelSala pc = new PanelSala();
+        pc.setSize(760, 540);
+        pc.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(pc,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        PanelProyeccion pc = new PanelProyeccion();
+        pc.setSize(760, 540);
+        pc.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(pc,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments

@@ -89,6 +89,28 @@ public class SalaData {
         }
     }
     
+    public void modificarSala(Sala s ){
+        String sql = "UPDATE sala SET ubicacion = ?,tipoSala = ?,localidad = ? ,estadoSal = ? WHERE idSala = ?";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, s.getUbicacion());
+            ps.setString(2, s.getTipoSala());
+            ps.setString(3,s.getLocalidad());
+            ps.setBoolean(4,s.isEstadoSal());
+            ps.setInt(5, s.getIdSala());
+
+            if (ps.executeUpdate() > 0) {
+                JOptionPane.showMessageDialog(null, "Sala Modificada Exitosamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "No Existe la Sala");
+            }
+            ps.close();
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al Modificar Sala" + ex);
+        }
+    }
+    
     public Sala buscarSala(int idSala){
         Sala s = null;
 

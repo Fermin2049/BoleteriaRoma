@@ -128,6 +128,11 @@ public class PanelButaca extends javax.swing.JPanel {
                 jComboSalaMouseClicked(evt);
             }
         });
+        jComboSala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboSalaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -345,6 +350,10 @@ public class PanelButaca extends javax.swing.JPanel {
     private void jComboSala1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboSala1MouseClicked
         llenarComboSala1();
     }//GEN-LAST:event_jComboSala1MouseClicked
+
+    private void jComboSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboSalaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboSalaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

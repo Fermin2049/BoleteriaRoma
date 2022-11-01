@@ -155,11 +155,11 @@ public class ButacaData {
     
     
     
-//    SELECT  t.idButaca from butaca b, proyeccion p, sala s, tiket t 
+//SELECT  t.idButaca from butaca b, proyeccion p, sala s, tiket t 
 //WHERE t.idProyeccion=p.idProyeccion and t.idButaca= b.idButaca and p.idSala = s.idSala and s.idSala=b.idSala
 //and p.inicioPro BETWEEN '2022-10-27 16:00:00' AND '2022-10-27 18:00:00'
     
-//    SELECT pelicula.nombrePel, proyeccion.incioProy, proyeccion.finProy,proyeccion.idSala,proyeccion.idProyeccion 
+//SELECT pelicula.nombrePel, proyeccion.incioProy, proyeccion.finProy,proyeccion.idSala,proyeccion.idProyeccion 
 //FROM proyeccion, pelicula 
 //WHERE proyeccion.idPelicula = pelicula.idPelicula
 //AND incioProy >= now()

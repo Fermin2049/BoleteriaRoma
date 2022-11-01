@@ -47,16 +47,7 @@ public class PanelCliente extends javax.swing.JPanel {
         
     }
     
-    public void llenarComboCliente1(){
-        ArrayList<Cliente> listaCliente = (ArrayList<Cliente>) cd.listarCliente();
-        
-        for (Cliente cli : listaCliente) {
-            jComboCliente1.addItem(cli);
-            
-        }
-        jComboCliente1.setSelectedItem(-1);
-        
-    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -64,8 +55,6 @@ public class PanelCliente extends javax.swing.JPanel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         panelEliminar = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
-        jLabel13 = new javax.swing.JLabel();
-        jComboCliente1 = new javax.swing.JComboBox<>();
         panelAgregar = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -92,50 +81,22 @@ public class PanelCliente extends javax.swing.JPanel {
         jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jSeparator5 = new javax.swing.JSeparator();
-        jLabel14 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setForeground(new java.awt.Color(0, 0, 0));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel13.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Buscar un Cliente");
-
-        jComboCliente1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jComboCliente1MouseClicked(evt);
-            }
-        });
-        jComboCliente1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboCliente1ActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout panelEliminarLayout = new javax.swing.GroupLayout(panelEliminar);
         panelEliminar.setLayout(panelEliminarLayout);
         panelEliminarLayout.setHorizontalGroup(
             panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator4)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 363, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelEliminarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(72, 72, 72))
+            .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
         );
         panelEliminarLayout.setVerticalGroup(
             panelEliminarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelEliminarLayout.createSequentialGroup()
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(9, 9, 9)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
+                .addContainerGap(220, Short.MAX_VALUE))
         );
 
         add(panelEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 387, 230));
@@ -346,27 +307,17 @@ public class PanelCliente extends javax.swing.JPanel {
 
         add(panelModificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 0, 400, 330));
 
-        jLabel14.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("Eliminar un Cliente");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jSeparator5)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 376, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
-                .addGap(0, 192, Short.MAX_VALUE))
+                .addGap(0, 220, Short.MAX_VALUE))
         );
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 330, 400, 230));
@@ -431,30 +382,18 @@ public class PanelCliente extends javax.swing.JPanel {
         limpiarCampos();
     }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void jComboCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboCliente1ActionPerformed
-
-        Cliente cli = (Cliente) jComboCliente1.getSelectedItem();
-    }//GEN-LAST:event_jComboCliente1ActionPerformed
-
     private void jComboClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboClienteMouseClicked
         llenarComboCliente();
     }//GEN-LAST:event_jComboClienteMouseClicked
-
-    private void jComboCliente1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jComboCliente1MouseClicked
-        llenarComboCliente1();
-    }//GEN-LAST:event_jComboCliente1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<Cliente> jComboCliente;
-    private javax.swing.JComboBox<Cliente> jComboCliente1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

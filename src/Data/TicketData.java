@@ -55,7 +55,7 @@ public class TicketData {
             
             if (rs.next()) {
                 t.setIdTicket(rs.getInt(1));
-                JOptionPane.showMessageDialog(null, "Ticket Agregagada");
+                JOptionPane.showMessageDialog(null, "Ticket Agregagado");
             }
             ps.close();
             
