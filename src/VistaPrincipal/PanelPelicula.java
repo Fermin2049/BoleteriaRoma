@@ -76,7 +76,7 @@ public class PanelPelicula extends javax.swing.JPanel {
             }
         });
 
-        jLabel5.setText("Agregar Cliente");
+        jLabel5.setText("Agregar Pelicula");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

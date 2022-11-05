@@ -116,7 +116,7 @@ public class ClienteData {
     
     public Cliente buscarCliente(int idCliente){
         Cliente c = null;
-        String sql = "SELECT * FROM cliente WHERE idCliente = ? AND ";
+        String sql = "SELECT * FROM cliente WHERE idCliente = ? ";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -140,6 +140,8 @@ public class ClienteData {
         return c;
     }
     
+    
+    
     public List<Cliente> listarCliente(){
         ArrayList<Cliente> listarCliente = new ArrayList<>();
         
@@ -162,6 +164,33 @@ public class ClienteData {
             ps.close();
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error al obtener proyeccion" + ex);
+        }
+        
+        return listarCliente;
+    }
+    
+    public List<Cliente> listarAllCliente(){
+        ArrayList<Cliente> listarCliente = new ArrayList<>();
+        
+        String sql = "SELECT * FROM cliente";
+        
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            while (rs.next()) {                
+                Cliente c = new Cliente();
+                c.setIdCliente(rs.getInt("idCliente"));
+                c.setNombreCli(rs.getString("nombreCli"));
+                c.setApellidoCli(rs.getString("apellidoCli"));
+                c.setDniCli(rs.getInt("dniCli"));
+                c.setEstadoCli(rs.getBoolean("estadoCli"));
+                
+                listarCliente.add(c);
+            }
+            ps.close();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Error al obtener Cliente" + ex);
         }
         
         return listarCliente;

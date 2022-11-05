@@ -8,6 +8,7 @@ package Data;
 import Control.Butaca;
 import Control.Cliente;
 import Control.Proyeccion;
+import Control.Sala;
 import Control.Ticket;
 import java.sql.Connection;
 import java.sql.Date;
@@ -29,12 +30,14 @@ public class TicketData {
     ClienteData cd;
     ProyeccionData pd;
     ButacaData bd;
+    SalaData sd;
 
     public TicketData() {
         this.con = Conexion.getConexion();
         cd = new ClienteData();
         pd = new ProyeccionData();
         bd = new ButacaData();
+        sd = new SalaData();
     }
     
     public void agregarTick(Ticket t){
@@ -169,6 +172,35 @@ public class TicketData {
         }
         
         return listarTicket;
+    }
+    
+    public Butaca butacasLibre(Butaca b){
+
+        String sql = "SELECT  t.idButaca from butaca b, proyeccion p, sala s, ticket t \n" +
+"WHERE t.idProyeccion=p.idProyeccion and t.idButaca= b.idButaca and p.idSala = s.idSala and s.idSala=b.idSala\n" +
+"and p.incioProy BETWEEN '2022-11-02 00:00:00' AND '2022-11-02 12:00:00' ";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            //ps.setInt(1,idButaca);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                b = new Butaca();
+
+                b.setIdButaca(rs.getInt("idButaca"));
+                Sala s = sd.buscarSala(rs.getInt("idSala"));
+                b.setSala(s);
+                b.setFila(rs.getString("fila"));
+                b.setColumna(rs.getInt("columna"));
+
+
+            }
+            ps.close();
+        } catch (SQLException exception) {
+            JOptionPane.showMessageDialog(null, "ERROR"+exception.getMessage());
+        }
+        return b;
     }
     
 }

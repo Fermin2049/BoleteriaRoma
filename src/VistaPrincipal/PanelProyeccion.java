@@ -99,7 +99,7 @@ public class PanelProyeccion extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Agregar  Nueva Sala");
+        jLabel1.setText("Agregar una  Proyeccion");
 
         jComboSala.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -151,7 +151,7 @@ public class PanelProyeccion extends javax.swing.JPanel {
             }
         });
 
-        jAgregarButaca.setText("Agregar Butaca");
+        jAgregarButaca.setText("Agregar  Proyeccion");
         jAgregarButaca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jAgregarButaca.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -208,11 +208,14 @@ public class PanelProyeccion extends javax.swing.JPanel {
                                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                             .addComponent(horaFin, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel6))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(150, 150, 150)
-                                .addComponent(jAgregarButaca, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addContainerGap()
+                                        .addComponent(jLabel6))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addGap(150, 150, 150)
+                                        .addComponent(jAgregarButaca)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addGap(0, 32, Short.MAX_VALUE)))
                 .addContainerGap())
         );
