@@ -90,7 +90,7 @@ public class Proyeccion {
 
     @Override
     public String toString() {
-        return "Proyeccion{" + "idProyeecion=" + idProyeecion + ", idSala=" + idSala + ", idPelicula=" + idPelicula + ", incioProy=" + incioProy + ", finProy=" + finProy + ", estadoProy=" + estadoProy + '}';
+        return idSala + ", incio=" + incioProy + ", fin=" + finProy ;
     }
 
     

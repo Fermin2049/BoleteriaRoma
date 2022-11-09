@@ -174,15 +174,16 @@ public class TicketData {
         return listarTicket;
     }
     
-    public Butaca butacasLibre(Butaca b){
+    public Butaca butacasLibre(Proyeccion p,Butaca b){
 
         String sql = "SELECT  t.idButaca from butaca b, proyeccion p, sala s, ticket t \n" +
-"WHERE t.idProyeccion=p.idProyeccion and t.idButaca= b.idButaca and p.idSala = s.idSala and s.idSala=b.idSala\n" +
-"and p.incioProy BETWEEN '2022-11-02 00:00:00' AND '2022-11-02 12:00:00' ";
+                    "WHERE t.idProyeccion=p.idProyeccion and t.idButaca= b.idButaca and p.idSala = s.idSala and s.idSala=b.idSala\n" +
+                    "and p.incioProy BETWEEN ? AND ? ";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            //ps.setInt(1,idButaca);
+            ps.setTimestamp(1,p.getIncioProy());
+            ps.setTimestamp(1,p.getFinProy());
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -190,7 +191,7 @@ public class TicketData {
 
                 b.setIdButaca(rs.getInt("idButaca"));
                 Sala s = sd.buscarSala(rs.getInt("idSala"));
-                b.setSala(s);
+                b.setIdSala(s);
                 b.setFila(rs.getString("fila"));
                 b.setColumna(rs.getInt("columna"));
 
@@ -201,6 +202,40 @@ public class TicketData {
             JOptionPane.showMessageDialog(null, "ERROR"+exception.getMessage());
         }
         return b;
+    }
+    
+    public List<Butaca> butacasLibre(Timestamp incio,Timestamp fin){
+        
+        ArrayList<Butaca> listaButacaLibre = new ArrayList<>();
+
+        String sql = "SELECT  t.idButaca, b.idSala, b.fila, b.columna from butaca b, proyeccion p, sala s, ticket t \n" +
+                    "WHERE t.idProyeccion=p.idProyeccion and t.idButaca= b.idButaca and p.idSala = s.idSala and s.idSala=b.idSala\n" +
+                    "and p.incioProy BETWEEN ? AND ? ";
+
+        try {
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setTimestamp(1,incio);
+            ps.setTimestamp(2,fin);
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Butaca b = new Butaca();
+
+                b.setIdButaca(rs.getInt("idButaca"));
+                Sala s = sd.buscarSala(rs.getInt("idSala"));
+                b.setIdSala(s);
+                b.setFila(rs.getString("fila"));
+                b.setColumna(rs.getInt("columna"));
+                
+                listaButacaLibre.add(b);
+
+
+            }
+            ps.close();
+        } catch (SQLException exception) {
+            JOptionPane.showMessageDialog(null, "Error al obtener Butacas Libres"+exception.getMessage());
+        }
+        return listaButacaLibre;
     }
     
 }

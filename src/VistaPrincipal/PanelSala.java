@@ -65,7 +65,7 @@ public class PanelSala extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(255, 255, 255));
         setMinimumSize(new java.awt.Dimension(780, 560));
-        setPreferredSize(new java.awt.Dimension(774, 558));
+        setPreferredSize(new java.awt.Dimension(780, 560));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setPreferredSize(new java.awt.Dimension(390, 280));
@@ -86,7 +86,9 @@ public class PanelSala extends javax.swing.JPanel {
 
         jLabel4.setText("Localidad =");
 
-        jLabel5.setText("Agregar Cliente");
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Agregar Sala");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -150,7 +152,7 @@ public class PanelSala extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Modificar Sala");
+        jLabel6.setText("Modificar/Elimnar una Sala");
 
         jComboSala.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -183,9 +185,9 @@ public class PanelSala extends javax.swing.JPanel {
 
         jLabel10.setText("Localidad =");
 
-        jLabel11.setText("Activo = ");
+        jLabel11.setText("Eleminar ? = ");
 
-        radioBotonSi.setText("Si");
+        radioBotonSi.setText("No");
         radioBotonSi.setActionCommand("si");
         radioBotonSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,8 +195,14 @@ public class PanelSala extends javax.swing.JPanel {
             }
         });
 
-        radioBotonNo.setText("No");
+        radioBotonNo.setText("Si");
+        radioBotonNo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                radioBotonNoActionPerformed(evt);
+            }
+        });
 
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Modificar");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -348,6 +356,10 @@ public class PanelSala extends javax.swing.JPanel {
 
         limpiarCampos();
     }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void radioBotonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioBotonNoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_radioBotonNoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

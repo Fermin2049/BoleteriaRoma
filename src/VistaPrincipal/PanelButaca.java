@@ -105,9 +105,11 @@ public class PanelButaca extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Agregar Butaca");
 
-        texFila.setText("textField2");
-
-        texColumna.setText("textField3");
+        texFila.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                texFilaActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Columna :");
 
@@ -115,6 +117,7 @@ public class PanelButaca extends javax.swing.JPanel {
 
         jLabel2.setText("Sala =");
 
+        jAgregarButaca.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jAgregarButaca.setText("Agregar Butaca");
         jAgregarButaca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jAgregarButaca.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -154,7 +157,7 @@ public class PanelButaca extends javax.swing.JPanel {
                             .addComponent(jComboSala, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 236, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(140, 140, 140)
-                        .addComponent(jAgregarButaca, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jAgregarButaca, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -199,6 +202,7 @@ public class PanelButaca extends javax.swing.JPanel {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Butaca =");
 
+        jModificar.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jModificar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jModificar.setText("Modificar");
         jModificar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -217,10 +221,6 @@ public class PanelButaca extends javax.swing.JPanel {
         jLabel5.setText("Sala =");
 
         jLabel8.setText("Fila =");
-
-        texFila1.setText("textField2");
-
-        texColumna1.setText("textField3");
 
         jLabel9.setText("Columna :");
 
@@ -336,7 +336,7 @@ public class PanelButaca extends javax.swing.JPanel {
 
 
         Sala cli = (Sala) jComboSala1.getSelectedItem();
-        but.setSala(cli);
+        but.setIdSala(cli);
         but.setFila(texFila1.getText());
         but.setColumna(Integer.parseInt(texColumna1.getText()));
 
@@ -354,6 +354,10 @@ public class PanelButaca extends javax.swing.JPanel {
     private void jComboSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboSalaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboSalaActionPerformed
+
+    private void texFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_texFilaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_texFilaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

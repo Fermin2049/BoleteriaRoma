@@ -34,7 +34,7 @@ public class ButacaData {
         
         try {
             PreparedStatement ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
-            ps.setInt(1,b.getSala().getIdSala());
+            ps.setInt(1,b.getIdSala().getIdSala());
             ps.setString(2,b.getFila());
             ps.setInt(3,b.getColumna());
 
@@ -79,7 +79,7 @@ public class ButacaData {
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1, b.getSala().getIdSala());
+            ps.setInt(1, b.getIdSala().getIdSala());
             ps.setString(2, b.getFila());
             ps.setInt(3, b.getColumna());
             ps.setInt(4, b.getIdButaca());
@@ -113,7 +113,7 @@ public class ButacaData {
 
                 b.setIdButaca(rs.getInt("idButaca"));
                 Sala s = sd.buscarSala(rs.getInt("idSala"));
-                b.setSala(s);
+                b.setIdSala(s);
                 b.setFila(rs.getString("fila"));
                 b.setColumna(rs.getInt("columna"));
 
@@ -139,7 +139,7 @@ public class ButacaData {
                 Butaca b = new Butaca();
                 b.setIdButaca(rs.getInt("idButaca"));
                 Sala s = sd.buscarSala(rs.getInt("idSala"));
-                b.setSala(s);
+                b.setIdSala(s);
                 b.setFila(rs.getString("fila"));
                 b.setColumna(rs.getInt("columna"));
                 

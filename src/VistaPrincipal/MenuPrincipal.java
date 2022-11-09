@@ -24,9 +24,10 @@ public class MenuPrincipal extends javax.swing.JFrame {
         int year = now.getYear();
         int dia = now.getDayOfMonth();
         int month = now.getMonthValue();
-        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"," ;Septiembre"
+        String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto"," Septiembre"
             ,"Octubre","Noviembre","Diciemrbre"};
         fecha.setText("Hoy es "+dia+" de "+meses[month - 1]+" de "+year);
+        System.out.println(month);
         
         
     }
@@ -282,6 +283,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jLabel16.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel16.setText("Ticket");
         jLabel16.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel16.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel16MouseClicked(evt);
+            }
+        });
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/icons8_ticket_25px.png"))); // NOI18N
 
@@ -420,7 +426,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         PanelCliente pc = new PanelCliente();
-        pc.setSize(760, 540);
+        pc.setSize(780, 560);
         pc.setLocation(0, 0);
         contenedor.removeAll();
         contenedor.add(pc,BorderLayout.CENTER);
@@ -430,7 +436,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         PanelButaca pc = new PanelButaca();
-        pc.setSize(760, 540);
+        pc.setSize(780, 560);
         pc.setLocation(0, 0);
         contenedor.removeAll();
         contenedor.add(pc,BorderLayout.CENTER);
@@ -440,7 +446,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         PanelPelicula pc = new PanelPelicula();
-        pc.setSize(760, 540);
+        pc.setSize(780, 560);
         pc.setLocation(0, 0);
         contenedor.removeAll();
         contenedor.add(pc,BorderLayout.CENTER);
@@ -450,7 +456,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         PanelSala pc = new PanelSala();
-        pc.setSize(760, 540);
+        pc.setSize(780, 560);
         pc.setLocation(0, 0);
         contenedor.removeAll();
         contenedor.add(pc,BorderLayout.CENTER);
@@ -460,13 +466,23 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         PanelProyeccion pc = new PanelProyeccion();
-        pc.setSize(760, 540);
+        pc.setSize(780, 560);
         pc.setLocation(0, 0);
         contenedor.removeAll();
         contenedor.add(pc,BorderLayout.CENTER);
         contenedor.revalidate();
         contenedor.repaint();
     }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
+        PanelTicket pc = new PanelTicket();
+        pc.setSize(780, 560);
+        pc.setLocation(0, 0);
+        contenedor.removeAll();
+        contenedor.add(pc,BorderLayout.CENTER);
+        contenedor.revalidate();
+        contenedor.repaint();
+    }//GEN-LAST:event_jLabel16MouseClicked
 
     /**
      * @param args the command line arguments

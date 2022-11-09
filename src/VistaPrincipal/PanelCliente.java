@@ -205,7 +205,7 @@ public class PanelCliente extends javax.swing.JPanel {
 
         jLabel13.setText("Por ID");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Buscar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -226,7 +226,7 @@ public class PanelCliente extends javax.swing.JPanel {
 
         jLabel18.setText("Eliminar Cliente Seleccionado");
 
-        jButton2.setText("jButton2");
+        jButton2.setText("Eleminar");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton2MouseClicked(evt);

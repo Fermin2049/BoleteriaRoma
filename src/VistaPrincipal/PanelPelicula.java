@@ -76,6 +76,7 @@ public class PanelPelicula extends javax.swing.JPanel {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel5.setText("Agregar Pelicula");
         jLabel5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -98,7 +99,7 @@ public class PanelPelicula extends javax.swing.JPanel {
                         .addComponent(texNobre, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(140, 140, 140)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel5)))
                 .addContainerGap(74, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -121,7 +122,7 @@ public class PanelPelicula extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Roboto", 1, 18)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Modificar un Cliente");
+        jLabel6.setText("Modificar/Eliminar una Pelicula");
 
         jComboPelicula.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -143,10 +144,10 @@ public class PanelPelicula extends javax.swing.JPanel {
             }
         });
 
-        jLabel11.setText("Activo = ");
+        jLabel11.setText("Eleminar ? = ");
 
         buttonGroup1.add(radioBotonSi);
-        radioBotonSi.setText("Si");
+        radioBotonSi.setText("No");
         radioBotonSi.setActionCommand("si");
         radioBotonSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,10 +156,11 @@ public class PanelPelicula extends javax.swing.JPanel {
         });
 
         buttonGroup1.add(radioBotonNo);
-        radioBotonNo.setText("No");
+        radioBotonNo.setText("Si");
 
         jLabel8.setText("Nombre =");
 
+        jLabel12.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Modificar");
         jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

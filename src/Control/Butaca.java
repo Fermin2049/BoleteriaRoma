@@ -4,21 +4,21 @@ public class Butaca {
 
     private int idButaca;
 
-    private Sala sala;
+    private Sala idSala;
 
     private String fila;
 
     private int columna;
 
-    public Butaca(int idButaca, Sala sala, String fila, int columna) {
+    public Butaca(int idButaca, Sala idSala, String fila, int columna) {
         this.idButaca = idButaca;
-        this.sala = sala;
+        this.idSala = idSala;
         this.fila = fila;
         this.columna = columna;
     }
 
-    public Butaca(Sala sala, String fila, int columna) {
-        this.sala = sala;
+    public Butaca(Sala idSala, String fila, int columna) {
+        this.idSala = idSala;
         this.fila = fila;
         this.columna = columna;
     }
@@ -34,12 +34,12 @@ public class Butaca {
         this.idButaca = idButaca;
     }
 
-    public Sala getSala() {
-        return sala;
+    public Sala getIdSala() {
+        return idSala;
     }
 
-    public void setSala(Sala sala) {
-        this.sala = sala;
+    public void setIdSala(Sala idSala) {
+        this.idSala = idSala;
     }
 
     public String getFila() {
@@ -60,7 +60,7 @@ public class Butaca {
 
     @Override
     public String toString() {
-        return " sala=" + sala + ", fila=" + fila + ", columna=" + columna;
+        return " sala=" + idSala + ", fila=" + fila + ", columna=" + columna;
     }
 
 
