@@ -204,18 +204,19 @@ public class TicketData {
         return b;
     }
     
-    public List<Butaca> butacasLibre(Timestamp incio,Timestamp fin){
+    public List<Butaca> butacasLibre(int sala,Timestamp incio){
         
         ArrayList<Butaca> listaButacaLibre = new ArrayList<>();
 
-        String sql = "SELECT  t.idButaca, b.idSala, b.fila, b.columna from butaca b, proyeccion p, sala s, ticket t \n" +
-                    "WHERE t.idProyeccion=p.idProyeccion and t.idButaca= b.idButaca and p.idSala = s.idSala and s.idSala=b.idSala\n" +
-                    "and p.incioProy BETWEEN ? AND ? ";
+        String sql = "SELECT b.idButaca,b.idSala, b.fila,b.columna FROM butaca b \n" +
+        "WHERE b.idSala = ? AND b.idButaca \n" +
+        "NOT IN (SELECT t.idButaca from butaca b, proyeccion p, sala s, ticket t \n" +
+        "WHERE t.idProyeccion = p.idProyeccion and t.idButaca = b.idButaca and p.idSala = s.idSala AND s.idSala = b.idSala and p.incioProy = ?); ";
 
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setTimestamp(1,incio);
-            ps.setTimestamp(2,fin);
+            ps.setInt(1,sala);
+            ps.setTimestamp(2,incio);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
