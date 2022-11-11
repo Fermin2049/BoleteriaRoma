@@ -106,9 +106,7 @@ public class PanelTicket extends javax.swing.JPanel {
         jComboCliente.setSelectedItem(-1);
         jComboProyeccion.setSelectedItem(-1);
         jComboPago.setSelectedItem(-1);
-        jDateInico.setDate(null);
         jTextPrecio.setText("");
-        horaIni.setText("");
         jTextPrecio.setText("");
     }
     @SuppressWarnings("unchecked")
